@@ -12,7 +12,7 @@ public:
 	void Update();
 
 private:
-
+	//メンバ関数ポインタのテーブル
 	static void(Enemy::* spFuncTable[])();
 
 

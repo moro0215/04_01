@@ -13,7 +13,7 @@ void Enemy::Withdrawal() {
 	printf("離脱\n");
 }
 
-
+//関数テーブル
 void(Enemy::* Enemy::spFuncTable[])() = {
 	&Enemy::Approach,
 	&Enemy::Shooting,
@@ -21,10 +21,10 @@ void(Enemy::* Enemy::spFuncTable[])() = {
 
 };
 
+//関数の呼び出し
 void Enemy::Update() {
-
-	(this->*spFuncTable[0])();
-	(this->*spFuncTable[1])();
-	(this->*spFuncTable[2])();
+	for (int i = 0; i < 3; i++) {
+		(this->*spFuncTable[i])();
+	}
 	
 }
